@@ -1,7 +1,41 @@
 @import "resets";
+@import "colours";
 @import "fonts";
 
 body {
-    background-color: #341931;
+    background-color: $background-colour;
     font-family: "Poppins", sans-serif;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+a {
+    color: $link-colour;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+main {
+    box-sizing: border-box;
+    padding: 25px 25px 75px 25px;
+}
+
+.gradient-text {
+    background: linear-gradient(left, #EE0979, #FF6A00);
+    background: -webkit-linear-gradient(left, #EE0979, #FF6A00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }

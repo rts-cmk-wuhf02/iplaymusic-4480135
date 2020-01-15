@@ -19,19 +19,39 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 100%;
     }
 
     #wifi-background {
-        background: linear-gradient(to right, #EE0979, #FF6A00);
+        background: linear-gradient(to right, $gradient-colour-left, $gradient-colour-right);
+        background: -webkit-linear-gradient(left, $gradient-colour-left, $gradient-colour-right);
+        background: -moz-linear-gradient(left, $gradient-colour-left, $gradient-colour-right);
         border-radius: 100%;
         
         .small-button {
             height: 25px;
+            width: 25px;
         }
     }
 
     .small-button {
         height: 20px;
+        width: 20px;
+
+        display: inline-block;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
     }
+
+    #icon-wave { background-image: url("/assets/img/icon_wave_inactive.png"); }
+    #icon-microphone { background-image: url("/assets/img/icon_microphone_inactive.png"); }
+    #icon-wifi { background-image: url("/assets/img/icon_wifi_inactive.png"); }
+    #icon-contrast { background-image: url("/assets/img/icon_contrast_inactive.png"); }
+    #icon-settings { background-image: url("/assets/img/icon_settings_inactive.png"); }
 }
+
+#lower-menu_wave #icon-wave { background-image: url("/assets/img/icon_wave_active.png"); }
+#lower-menu_microphone #icon-microphone { background-image: url("/assets/img/icon_microphone_active.png"); }
+#lower-menu_wifi #icon-wifi { background-image: url("/assets/img/icon_wifi_active.png"); }
+#lower-menu_contrast #icon-contrast { background-image: url("/assets/img/icon_contast_active.png"); }
+#lower-menu_settings #icon-settings { background-image: url("/assets/img/icon_settings_active.png"); }
