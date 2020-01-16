@@ -1,0 +1,74 @@
+<%- include('../partials/head_start') %>
+    <link rel="stylesheet" href="/assets/css/categories.css">
+
+    <title>iPlayMusic | Categories</title>
+<%- include('../partials/head_end') %>
+
+    <%- include('../partials/header_start') %>
+        Categories
+    <%- include('../partials/header_end') %>
+
+    <main>
+        <h1 class="gradient-text">Categories</h1>
+
+        <ul class="category-list">
+            <li><button class="category-item bg_alternative-colour">
+                <p>Alternative</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+            <li>
+                <button class="category-item bg_blues-colour">
+                    <p>Blues</p>
+                    <img src="/assets/img/icon_more.png">
+                </button>
+                <ul class="subcategory-list">
+                    <li><a class="subcategory-item">
+                        <p>Accoustic Blues</p>
+                        <img src="/assets/img/icon_arrow_forward.png">
+                    </a></li>
+                    <li><a class="subcategory-item">
+                        <p>Blues Rock</p>
+                        <img src="/assets/img/icon_arrow_forward.png">
+                    </a></li>
+                    <li><a class="subcategory-item">
+                        <p>Canadian Blues</p>
+                        <img src="/assets/img/icon_arrow_forward.png">
+                    </a></li>
+                </ul>
+            </li>
+            <li><button class="category-item bg_classical-colour">
+                <p>Classical</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+            <li><button class="category-item bg_country-colour">
+                <p>Country</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+            <li><button class="category-item bg_dance-colour">
+                <p>Dance</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+            <li><button class="category-item bg_electronic-colour">
+                <p>Electronic</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+            <li><button class="category-item bg_fitness-colour">
+                <p>Fitness & Workout</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+            <li><button class="category-item bg_hiphop-colour">
+                <p>Hip-Hop/Rap</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+            <li><button class="category-item bg_industrial-colour">
+                <p>Industrial</p>
+                <img src="/assets/img/icon_more.png">
+            </button></li>
+        </ul>
+    </main>
+
+    <div id="lower-menu_wave">
+        <%- include('../partials/lower-menu') %>
+    </div>
+
+<%- include('../partials/body_end') %>

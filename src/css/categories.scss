@@ -1,0 +1,49 @@
+@import "base";
+@import "lower-menu";
+@import "header";
+
+.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 35px 0;
+
+    .category-item {
+        padding: 15px 20px;
+        border: 0;
+        border-radius: 8px;
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        color: white;
+        font-weight: 600;
+        font-size: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px 0;
+
+        &.bg_alternative-colour { background-color: $alternative-colour; }
+        &.bg_blues-colour { background-color: $blues-colour; }
+        &.bg_classical-colour { background-color: $classical-colour; }
+        &.bg_country-colour { background-color: $country-colour; }
+        &.bg_dance-colour { background-color: $dance-colour; }
+        &.bg_electronic-colour { background-color: $electronic-colour; }
+        &.bg_fitness-colour { background-color: $fitness-colour; }
+        &.bg_hiphop-colour { background-color: $hiphop-colour; }
+        &.bg_industrial-colour { background-color: $industrial-colour; }
+    }
+}
+
+.subcategory-list {
+    list-style: none;
+    padding: 0 20px 0 25px;
+    margin: 15px 0 25px 0;
+
+    .subcategory-item {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        color: #FFFFFF;
+        padding: 8px 0;
+    }
+}
