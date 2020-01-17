@@ -25,9 +25,18 @@
         font-weight: 300;
         letter-spacing: 0.2rem;
         color: white;
+
     }
 
     .small-button {
         height: 18px;
+    }
+}
+
+.light-theme {
+    #header {
+        #page-title {
+            color: black;
+        }
     }
 }

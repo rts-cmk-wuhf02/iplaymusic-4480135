@@ -39,3 +39,20 @@ main {
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
+
+.light-icon {
+    display: none;
+}
+
+.light-theme {
+    background-color: $light_background-colour;
+    color: black;
+
+    .light-icon {
+        display: block;
+    }
+    
+    .dark-icon {
+        display: none;
+    }
+}

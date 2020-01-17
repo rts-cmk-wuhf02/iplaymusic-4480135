@@ -129,3 +129,17 @@ main {
     margin: 40px 0;
     font-weight: 600;
 }
+
+.light-theme {
+    h1 {
+        color: white;
+    }
+
+    #header #page-title {
+        color: white;
+    }
+
+    .playlist-title {
+        color: black;
+    }
+}

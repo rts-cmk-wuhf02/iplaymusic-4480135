@@ -64,3 +64,15 @@
     box-shadow: 0 -2px 50px 30px rgba(0, 0, 0, 0.5);
     z-index: -500;
 }
+
+.light-theme {
+    #lower-menu {
+        background-color: $light_background-colour;
+    }
+
+    #lower-menu_wave #icon-wave { background-image: url("/assets/img/icon_wave_active_light.png"); }
+    #lower-menu_microphone #icon-microphone { background-image: url("/assets/img/icon_microphone_active_light.png"); }
+    #lower-menu_wifi #icon-wifi { background-image: url("/assets/img/icon_wifi_active_light.png"); }
+    #lower-menu_contrast #icon-contrast { background-image: url("/assets/img/icon_contast_active_light.png"); }
+    #lower-menu_settings #icon-settings { background-image: url("/assets/img/icon_settings_active_light.png"); }
+}
