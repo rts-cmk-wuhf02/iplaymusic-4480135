@@ -14,12 +14,17 @@
             <section class="">
                 <h1>Playlists</h1>
             </section>
-            <ul class="item-list">
-                <li><a href="#"><div class="item" style="background-image: url('/assets/img/pexels-photo-01.png');"></div></a></li>
-                <li><a href="#"><div class="item" style="background-image: url('/assets/img/pexels-photo-01.png');"></div></a></li>
-                <li><a href="#"><div class="item" style="background-image: url('/assets/img/pexels-photo-01.png');"></div></a></li>
-            </ul>
-            <h2 class="playlist-title">Top 50 Rock Ballads</h2 c>
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                </div>
+            </div>
+            <h2 class="playlist-title">Top 50 Rock Ballads</h2>
         </section>
 
         <section class="all-songs">
@@ -86,5 +91,18 @@
     <div id="lower-menu_wave">
         <%- include('../partials/lower-menu') %>
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 2,
+            spaceBetween: 0,
+            loop: true,
+            centeredSlides: true
+        });
+    </script>
 
 <%- include('../partials/body_end') %>

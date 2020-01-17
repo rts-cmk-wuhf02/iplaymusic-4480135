@@ -1,6 +1,8 @@
 @import "base";
 @import "lower-menu";
 @import "header";
+@import url("https://unpkg.com/swiper/css/swiper.min.css");
+
 
 .item-list {
     list-style: none;
@@ -137,4 +139,27 @@
     .playlist-title {
         color: black;
     }
+}
+
+
+.swiper-container {
+    height: 50vw;
+    width: 100vw;
+    padding-top: 30px;
+    top: -30px;
+    left: -25px;
+}
+
+.swiper-slide {
+    transform: scale(0.6);
+    background-size: cover;
+    background-image: url("/assets/img/pexels-photo-02.png");
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    transition: transform 0.5s, box-shadow;
+}
+
+.swiper-slide-active {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
