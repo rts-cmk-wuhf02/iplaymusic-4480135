@@ -1,0 +1,49 @@
+<%- include('../partials/head_start') %>
+    <link rel="stylesheet" href="/assets/css/player.css">
+
+    <title>iPlayMusic | Playing</title>
+<%- include('../partials/head_end') %>
+
+    <%- include('../partials/header_start') %>
+        Playing
+    <%- include('../partials/header_end') %>
+    
+
+    <main style="background-image: url('/assets/img/pexels-photo-05.png');">
+        <div id="ring-one">
+            <div id="ring-two">
+                <div id="playing-icon" style="background-image: url('/assets/img/pexels-photo-01.png');">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="information-wrapper">
+            <p id="song-title">Don't call me up</p>
+            <p id="artist-name">Mabel</p>
+
+            <div id="progress-bar">
+                <div id="progress-cover">
+                    <div id="progress-dot-ring">
+                        <div id="progress-dot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="progress-times">
+                <p>0:00</p>
+                <p>3:20</p>
+            </div>
+
+            <div id="controls">
+                <button><img src="/assets/img/icon_skip-backward.png" alt=""></button>
+                <button><img class="icon-rewind" src="/assets/img/icon_rewind.png" alt=""></button>
+                <button><img id="icon-play-song" src="/assets/img/icon_play-player.png" alt=""></button>
+                <button><img class="icon-rewind" src="/assets/img/icon_fast-forward.png" alt=""></button>
+                <button><img src="/assets/img/icon_skip-forward.png" alt=""></button>
+            </div>
+        </div>
+    </main>
+
+<%- include('../partials/body_end') %>

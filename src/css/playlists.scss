@@ -1,0 +1,131 @@
+@import "base";
+@import "lower-menu";
+@import "header";
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding-top: 90vw;
+}
+
+.banner {
+    width: 100%;
+    height: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 75px 25px 0 25px;
+    background-size: contain;
+    font-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: center top;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .playlist-title {
+        font-size: 1.5rem;
+        color: white;
+        max-width: 40vw;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .item-list {
+        display: flex;
+        position: relative;
+        left: -25px;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+
+        li:nth-child(0n+2) .item {
+            position: static;
+            width: 45vw;
+            height: 45vw;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+            margin: 0 50px;
+        }
+
+        li:nth-child(0n+1) .item {
+            left: 0;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        li:nth-child(0n+3) .item {
+            right: 0;
+            transform: translateX(50%) translateY(-50%);
+        }
+    }
+
+    .item {
+        width: 25vw;
+        height: 25vw;
+        border-radius: 8px;
+        background-size: cover;
+        position: absolute;
+        top: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    }
+}
+
+.all-songs {
+    .item {
+        height: 50px;
+        margin: 20px 0;
+
+        .item-inner  {
+            display: flex;
+            align-items: center;
+
+            .item-icon {
+                width: 50px;
+                height: 50px;
+                background-size: cover;
+                border-radius: 4px;
+            }
+
+            .item-details {
+                margin: 0 20px;
+                flex: 1;
+                overflow: hidden;
+                height: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .item-title {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+
+            .item-songs {
+                justify-self: flex-end;
+            }
+        }
+    }
+}
+
+.border-button {
+    border: 3px solid $link-colour;
+    color: $link-colour;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 20px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 40px 0;
+    font-weight: 600;
+}
