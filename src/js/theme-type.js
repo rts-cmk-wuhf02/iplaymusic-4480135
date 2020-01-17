@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     iconContrastDom.addEventListener('click', function() {
         if(getCookie("light-theme") != "true") {
-            document.cookie = "light-theme=true";
+            document.cookie = "light-theme=true; path=/";
             document.body.classList.add("light-theme");
         } else {
-            document.cookie = "light-theme=false";
+            document.cookie = "light-theme=false; path=/";
             document.body.classList.remove("light-theme");
         }
     });
