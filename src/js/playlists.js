@@ -8,7 +8,7 @@ let swiper;
 let dataPlaylists;
 let dataTracks = [];
 
-let currentPlaylist = 0;
+let currentPlaylist = -1;
 
 // DOM
 const swiperWrapperDom = document.querySelector(".swiper-wrapper");
@@ -100,23 +100,28 @@ function showData() {
 }
 
 function updateData() {
-    currentPlaylist = swiper.realIndex;
-    const tracks = dataTracks[currentPlaylist];
-    
-    if(tracks) {
-        itemListDom.innerHTML = "";
+    if(currentPlaylist != swiper.realIndex) {
+        let previousPlaylist = currentPlaylist;
+        currentPlaylist = swiper.realIndex;
+        const tracks = dataTracks[currentPlaylist];
         
-        playlistTitleDom.textContent = dataPlaylists.playlists.items[currentPlaylist].name;
+        if(tracks) {
+            itemListDom.innerHTML = "";
+            
+            playlistTitleDom.textContent = dataPlaylists.playlists.items[currentPlaylist].name;
 
-        for(let i = 0; i < tracks.items.length; i++) {
-            if(tracks.items[i].track !== null) {
-                const trackElement = templateItemDom.content.cloneNode(true);
-                trackElement.querySelector(".item-title").textContent = tracks.items[i].track.name;
-                trackElement.querySelector(".item-subtitle").textContent = tracks.items[i].track.artists[0].name;
-                trackElement.querySelector(".item-length").textContent = tracks.items[i].track.duration_ms;
+            for(let i = 0; i < tracks.items.length; i++) {
+                if(tracks.items[i].track !== null) {
+                    const trackElement = templateItemDom.content.cloneNode(true);
+                    trackElement.querySelector(".item-title").textContent = tracks.items[i].track.name;
+                    trackElement.querySelector(".item-subtitle").textContent = tracks.items[i].track.artists[0].name;
+                    trackElement.querySelector(".item-length").textContent = tracks.items[i].track.duration_ms;
 
-                itemListDom.appendChild(trackElement);
+                    itemListDom.appendChild(trackElement);
+                }
             }
+        } else {
+            currentPlaylist = previousPlaylist;
         }
     }
 }
