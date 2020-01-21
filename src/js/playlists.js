@@ -65,7 +65,7 @@ function authenticateClient() {
 
 // Show data
 function showData() {
-    // Get featured playlists
+    // Get the featured playlists
     fetchData("browse/featured-playlists?country=SE&limit=10").then(function(playlists) {
         dataPlaylists = playlists;
         const playlistItems = playlists.playlists.items;
