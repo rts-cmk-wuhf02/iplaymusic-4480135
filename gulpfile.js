@@ -47,9 +47,9 @@ function scss(next) {
 
 function js(next) {
     gulp.src("./src/js/**/*.js")
-        .pipe(babel({
+        /*.pipe(babel({
             presets: ['@babel/env']
-        }).on("error", err => console.log(err)))
+        }).on("error", err => console.log(err)))*/
         .pipe(gulp.dest("./dist/assets/js"))
         .pipe(connect.reload());
 

@@ -4,9 +4,11 @@
     <title>iPlayMusic | Playlists</title>
 <%- include('../partials/head_end') %>
 
-    <%- include('../partials/header_start') %>
-        Playlists
-    <%- include('../partials/header_end') %>
+    <div id="header_fixed">
+        <%- include('../partials/header_start') %>
+            Playlists
+        <%- include('../partials/header_end') %>
+    </div>
     
 
     <main>
@@ -17,70 +19,17 @@
             <!-- Swiper -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
+                    <!-- Slides here -->
+
                 </div>
             </div>
-            <h2 class="playlist-title">Top 50 Rock Ballads</h2>
+            <h2 class="playlist-title"></h2>
         </section>
 
         <section class="all-songs">
             <ul class="item-list">
                 <!-- Items here -->
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>3:58</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>2:24</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>5:15</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>3:36</p>
-                        </section>
-                    </article>
-                </li>
+                
             </ul>
         </section>
 
@@ -92,17 +41,29 @@
         <%- include('../partials/lower-menu') %>
     </div>
 
+    <template id="template-item">
+        <li class="item">
+            <article class="item-inner">
+                <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
+                <section class="item-details">
+                    <h3 class="item-title"></h3>
+                    <p class="item-subtitle"></p>
+                </section>
+                <section class="item-songs">
+                    <p class="item-length"></p>
+                </section>
+            </article>
+        </li>
+    </template>
+
+    <template id="template-slide">
+        <div class="swiper-slide"><div class="swiper-slide-image"></div></div>
+    </template>
+
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-        const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 2,
-            spaceBetween: 0,
-            loop: true,
-            centeredSlides: true
-        });
-    </script>
+    <script src="/assets/js/playlists.js"></script>
+
 
 <%- include('../partials/body_end') %>
