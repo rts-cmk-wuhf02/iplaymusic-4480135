@@ -109,6 +109,12 @@ main {
                     text-overflow: ellipsis;
                     white-space: nowrap;
                 }
+
+                .item-subtitle {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
             }
 
             .item-songs {

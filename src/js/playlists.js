@@ -114,9 +114,18 @@ function updateData() {
                 if(tracks.items[i].track !== null) {
                     const trackElement = templateItemDom.content.cloneNode(true);
                     trackElement.querySelector(".item-title").textContent = tracks.items[i].track.name;
-                    trackElement.querySelector(".item-subtitle").textContent = tracks.items[i].track.artists[0].name;
-                    trackElement.querySelector(".item-length").textContent = tracks.items[i].track.duration_ms;
 
+                    let artistNames = "";
+                    for(let n = 0; n < tracks.items[i].track.artists.length; n++) {
+                        artistNames += tracks.items[i].track.artists[n].name;
+
+                        if(n < tracks.items[i].track.artists.length - 1) {
+                            artistNames += ", ";
+                        }
+                    }
+                    trackElement.querySelector(".item-subtitle").textContent = artistNames;
+
+                    trackElement.querySelector(".item-length").textContent = msToMinutesAndSeconds(tracks.items[i].track.duration_ms);
                     itemListDom.appendChild(trackElement);
                 }
             }
@@ -124,4 +133,10 @@ function updateData() {
             currentPlaylist = previousPlaylist;
         }
     }
+}
+
+function msToMinutesAndSeconds(ms) {
+    let minutes = Math.floor(ms / 60000);
+    let seconds = ((ms % 60000) / 1000).toFixed(0);
+    return minutes + ":" + ((seconds < 10) ? '0' : '') + seconds;
 }
