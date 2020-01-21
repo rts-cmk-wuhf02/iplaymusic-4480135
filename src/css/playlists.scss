@@ -161,7 +161,8 @@ main {
 }
 
 .swiper-slide {
-    transform: scale(0.6);
+    width: 50%;
+    height: 50%;
     background-size: cover;
     background-image: url("/assets/img/pexels-photo-02.png");
     border-radius: 8px;
@@ -177,6 +178,7 @@ main {
 }
 
 .swiper-slide-active {
-    transform: scale(1);
+    height: 100%;
+    width: 100%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
