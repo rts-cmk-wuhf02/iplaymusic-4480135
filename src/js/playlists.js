@@ -1,5 +1,3 @@
-const client_id = "7b42bc0ce6824ed98950383d4b42274c";
-const client_secret = "668d8c44382443519df17a6a87638cb6";
 let authToken;
 
 let swiper;

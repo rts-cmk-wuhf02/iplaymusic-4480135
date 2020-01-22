@@ -17,11 +17,16 @@
                 <p class="head-name">Featured Albums</p>
                 <a href="#">View all</a>
             </section>
-            <ul class="item-list">
-                <li><a href="#"><div class="item" style="background-image: url('/assets/img/pexels-photo-01.png');"></div></a></li>
-                <li><a href="#"><div class="item" style="background-image: url('/assets/img/pexels-photo-01.png');"></div></a></li>
-                <li><a href="#"><div class="item" style="background-image: url('/assets/img/pexels-photo-01.png');"></div></a></li>
-            </ul>
+            <div class="swiper-container">
+                <div class="swiper-wrapper item-list">
+                    <!-- Slides here -->
+                    <div class="item swiper-slide" style="background-image: url('/assets/img/pexels-photo-01.png');"></div>
+                    <div class="item swiper-slide" style="background-image: url('/assets/img/pexels-photo-02.png');"></div>
+                    <div class="item swiper-slide" style="background-image: url('/assets/img/pexels-photo-03.png');"></div>
+                    <div class="item swiper-slide" style="background-image: url('/assets/img/pexels-photo-04.png');"></div>
+                    <div class="item swiper-slide" style="background-image: url('/assets/img/pexels-photo-05.png');"></div>
+                </div>
+            </div>
         </section>
 
         <section class="new-releases">
@@ -31,57 +36,6 @@
             </section>
             <ul class="item-list">
                 <!-- Items here -->
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/pexels-photo-01.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>18 Songs</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/pexels-photo-02.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>12 Songs</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/pexels-photo-01.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>8 Songs</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/pexels-photo-02.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>7 Songs</p>
-                        </section>
-                    </article>
-                </li>
             </ul>
         </section>
     </main>    
@@ -90,5 +44,27 @@
     <div id="lower-menu_wave">
         <%- include('../partials/lower-menu') %>
     </div>
+
+    <template id="template-item">
+        <li class="item">
+            <a class="item-link" href="">
+                <article class="item-inner">
+                    <div class="item-icon"></div>
+                    <section class="item-details">
+                        <h3 class="item-title"></h3>
+                        <p class="item-subtitle"></p>
+                    </section>
+                    <section class="item-songs">
+                        <p class="item-song-amount"></p>
+                    </section>
+                </article>
+            </a>
+        </li>
+    </template>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+    <script src="/assets/js/albums.js"></script>
 
 <%- include('../partials/body_end') %>

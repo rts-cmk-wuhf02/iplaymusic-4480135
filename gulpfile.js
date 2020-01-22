@@ -38,7 +38,7 @@ function images(next) {
 
 function scss(next) {
     gulp.src("./src/css/**/*.scss")
-        .pipe(sass())
+        .pipe(sass().on("error", err => console.log(err)))
         .pipe(gulp.dest("./dist/assets/css"))
         .pipe(connect.reload());
 

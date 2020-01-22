@@ -1,6 +1,7 @@
 @import "base";
 @import "lower-menu";
 @import "header";
+@import url("https://unpkg.com/swiper/css/swiper.min.css");
 
 .heads {
     justify-content: space-between;
@@ -19,26 +20,18 @@
 }
 
 .featured-albums {
-    position: relative;
-    margin-bottom: 35vw;
     padding-bottom: 50px;
     margin-top: 30px;
 
-    .item-list {
-        margin: 25px 0;
-        display: flex;
-        position: absolute;
-        top: 25px;
-        left: -25px;
+    .swiper-container {
+        height: 30vw;
         width: 100vw;
-        overflow: hidden;
         box-sizing: border-box;
         padding-left: 25px;
+        left: -25px;
     }
 
     .item {
-        width: 35vw;
-        height: 35vw;
         border-radius: 8px;
         background-size: cover;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
@@ -78,11 +71,23 @@
                     text-overflow: ellipsis;
                     white-space: nowrap;
                 }
+
+                .item-subtitle {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
             }
 
             .item-songs {
                 justify-self: flex-end;
             }
+
+        }
+
+        .item-link {
+            color: white;
+            font-size: 0.75rem;
         }
     }
 }
