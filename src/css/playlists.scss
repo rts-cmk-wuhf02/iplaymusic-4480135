@@ -170,13 +170,15 @@ main {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
         width: 50%;
         height: 50%;
-        background-size: 50%;
+        /*background-size: 50%;*/
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        transition: transform 0.5s, width 0.5s, height 0.5s;
+        transition: transform 0.5s, width 0.5s, height 0.5s, box-shadow 0.5s;
         position: absolute;
         left: 50%;
         top: 50%;
+        border-radius: 8px;
         transform: translateX(-50%) translateY(-50%);
     }
 }
