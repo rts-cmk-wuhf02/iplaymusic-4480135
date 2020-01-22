@@ -161,24 +161,26 @@ main {
 }
 
 .swiper-slide {
-    width: 50%;
-    height: 50%;
     background-size: cover;
-    background-image: url("/assets/img/pexels-photo-02.png");
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);*/
     overflow: hidden;
-    transition: transform 0.5s, box-shadow;
+    transition: transform 0.5s, box-shadow 0.5s;
 
     .swiper-slide-image {
         width: 100%;
         height: 100%;
-        background-size: cover;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-size 0.5s;
     }
 }
 
 .swiper-slide-active {
-    height: 100%;
-    width: 100%;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    /*box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);*/
+
+    .swiper-slide-image {
+        background-size: 100%;
+    }
 }
