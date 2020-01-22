@@ -89,8 +89,7 @@ function showData() {
 
         swiper = new Swiper('.swiper-container', {
             slidesPerView: 3,
-            spaceBetween: 0,
-            centeredSlides: false,
+            spaceBetween: 15,
             freeMode: true
         });
     });
