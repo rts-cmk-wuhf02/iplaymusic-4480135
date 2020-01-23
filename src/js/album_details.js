@@ -95,7 +95,7 @@ function showData() {
             }
             albumElement.querySelector(".item-subtitle").textContent = artistsThis;
 
-            albumElement.querySelector(".item-link").href = "/song_details/?id=" + albumItems[i].id;
+            albumElement.querySelector(".item-link").href = "/player/?id=" + albumItems[i].id;
             albumElement.querySelector(".item-length").textContent =  msToMinutesAndSeconds(albumItems[i].duration_ms);
 
 

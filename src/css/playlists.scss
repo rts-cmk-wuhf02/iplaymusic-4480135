@@ -81,6 +81,11 @@ main {
         height: 50px;
         margin: 20px 0;
 
+        .item-link {
+            color: white;
+            font-size: 0.75rem;
+        }
+
         .item-inner  {
             display: flex;
             align-items: center;
@@ -147,6 +152,14 @@ main {
 
     .playlist-title {
         color: black;
+    }
+
+    .all-songs {
+        .item {
+            .item-link {
+                color: black;
+            }
+        }
     }
 }
 

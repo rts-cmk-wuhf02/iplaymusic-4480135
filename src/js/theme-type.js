@@ -11,13 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add("light-theme");
     }
 
-    iconContrastDom.addEventListener('click', function() {
-        if(getCookie("light-theme") != "true") {
-            document.cookie = "light-theme=true; path=/";
-            document.body.classList.add("light-theme");
-        } else {
-            document.cookie = "light-theme=false; path=/";
-            document.body.classList.remove("light-theme");
-        }
-    });
+    if(iconContrastDom != undefined) {
+        iconContrastDom.addEventListener('click', function() {
+            if(getCookie("light-theme") != "true") {
+                document.cookie = "light-theme=true; path=/";
+                document.body.classList.add("light-theme");
+            } else {
+                document.cookie = "light-theme=false; path=/";
+                document.body.classList.remove("light-theme");
+            }
+        });
+    }
 });

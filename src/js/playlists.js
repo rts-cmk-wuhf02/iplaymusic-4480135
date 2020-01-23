@@ -123,6 +123,7 @@ function updateData() {
                         }
                     }
                     trackElement.querySelector(".item-subtitle").textContent = artistNames;
+                    trackElement.querySelector(".item-link").href = "/player/?id=" + tracks.items[i].track.id;
 
                     trackElement.querySelector(".item-length").textContent = msToMinutesAndSeconds(tracks.items[i].track.duration_ms);
                     itemListDom.appendChild(trackElement);
