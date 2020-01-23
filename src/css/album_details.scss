@@ -44,13 +44,27 @@ main {
     .item-list {
         display: flex;
         margin-top: 20px;
+        overflow: scroll;
+        position: relative;
+        padding: 0 25px;
+        left: -25px;
+        width: 100vw;
+        box-sizing: border-box;
 
         .item {
+            flex-shrink: 0;
             padding: 10px;
             background-color: $link-colour;
             font-weight: 600;
             border-radius: 50px;
             margin-right: 10px;
+        }
+
+        &::after {
+            content: "";
+            width: 15px;
+            display: inline-block;
+            flex-shrink: 0;
         }
     }
 }
@@ -59,6 +73,11 @@ main {
     .item {
         height: 50px;
         margin: 20px 0;
+
+        .item-link {
+            color: white;
+            font-size: 0.75rem;
+        }
 
         .item-inner  {
             display: flex;
@@ -99,5 +118,9 @@ main {
 .light-theme {
     .banner {
         color: white;
+    }
+
+    .all-songs .item .item-link {
+        color: black;
     }
 }

@@ -11,15 +11,14 @@
 
     <main>
         <section class="banner" style="background-image: url('/assets/img/pexels-photo-03.png');">
-            <section class="">
-                <h1>Old Town Road</h1>
-                <p class="head-name">12 Songs</p>
+            <section>
+                <h1 class="banner-title"></h1>
+                <p class="head-name banner-songs"></p>
             </section>
-            <section class="">
+            <section>
                 <p>genres hashtags</p>
-                <ul class="item-list">
-                    <li class="item">#country</li>
-                    <li class="item">#country road</li>
+                <ul class="item-list banner-tags">
+                    <!-- Items here -->
                 </ul>
             </section>
         </section>
@@ -30,57 +29,6 @@
             </section>
             <ul class="item-list">
                 <!-- Items here -->
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>3:58</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>2:24</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>5:15</p>
-                        </section>
-                    </article>
-                </li>
-
-                <li class="item">
-                    <article class="item-inner">
-                        <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
-                        <section class="item-details">
-                            <h3 class="item-title">Old Town Road</h3>
-                            <p class="item-subtitle">Billy Ray Cyrus</p>
-                        </section>
-                        <section class="item-songs">
-                            <p>3:36</p>
-                        </section>
-                    </article>
-                </li>
             </ul>
         </section>
     </main>    
@@ -89,5 +37,29 @@
     <div id="lower-menu_wave">
         <%- include('../partials/lower-menu') %>
     </div>
+
+    <template id="template-item">
+        <li class="item">
+            <a href="" class="item-link">
+                <article class="item-inner">
+                    <div class="item-icon" style="background-image: url('/assets/img/button_play.png');"></div>
+                    <section class="item-details">
+                        <h3 class="item-title"></h3>
+                        <p class="item-subtitle"></p>
+                    </section>
+                    <section class="item-songs">
+                        <p class="item-length"></p>
+                    </section>
+                </article>
+            </a>
+        </li>
+    </template>
+
+    <template id="template-genre-item">
+        <li class="item"></li>
+    </template>
+
+    
+    <script src="/assets/js/album_details.js"></script>
 
 <%- include('../partials/body_end') %>

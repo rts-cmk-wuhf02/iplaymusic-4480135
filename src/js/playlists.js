@@ -55,7 +55,7 @@ function authenticateClient() {
         authToken = json.access_token;
         sessionStorage.setItem("spotify-token", authToken);
 
-        setTimeout(authenticateClient, json.expires_in);
+        setTimeout(authenticateClient, json.expires_in * 100);
         
         showData();
     })

@@ -1,6 +1,7 @@
 let authToken;
 
-let swiper;
+let params = new URLSearchParams(window.location.search);
+
 
 // Data
 let dataPlaylists;
@@ -9,11 +10,11 @@ let dataTracks = [];
 let currentPlaylist = -1;
 
 // DOM
-const swiperWrapperDom = document.querySelector(".swiper-wrapper");
-const itemListDom = document.querySelector(".new-releases .item-list");
+const itemListDom = document.querySelector(".all-songs .item-list");
+const bannerTagsListDom = document.getElementsByClassName("banner-tags")[0];
 
 const templateItemDom = document.getElementById("template-item");
-const templateSlideDom = document.getElementById("template-slide");
+const templateGenreItemDom = document.getElementById("template-genre-item");
 
 // Fetch shorthand function
 async function fetchData(resource) {
@@ -62,8 +63,23 @@ function authenticateClient() {
 // Show data
 function showData() {
     // Get the new releases
-    fetchData("browse/new-releases?country=SE").then(function(albums) {
-        const albumItems = albums.albums.items;
+    fetchData("albums/" + params.get("id")).then(function(album) {
+        console.log(album);
+        const albumItems = album.tracks.items;
+
+        document.querySelector(".banner").style = `background-image: url('${album.images[0].url}');`;
+        document.querySelector(".banner-title").textContent = album.name;
+        document.querySelector(".banner-songs").textContent = album.total_tracks + " Songs";
+
+        fetchData("artists/" + album.artists[0].id).then(function(artist) {
+            for(let i = 0; i < artist.genres.length; i++) {
+                const albumElement = templateGenreItemDom.content.cloneNode(true);
+                albumElement.querySelector(".item").textContent = "#" + artist.genres[i];
+    
+                bannerTagsListDom.appendChild(albumElement);
+            }
+        });
+
 
         for(let i = 0; i < albumItems.length; i++) {
             const albumElement = templateItemDom.content.cloneNode(true);
@@ -79,22 +95,17 @@ function showData() {
             }
             albumElement.querySelector(".item-subtitle").textContent = artistsThis;
 
-            albumElement.querySelector(".item-link").href = "/album_details/?id=" + albumItems[i].id;
-            albumElement.querySelector(".item-song-amount").textContent = albumItems[i].total_tracks + " Songs";
-            albumElement.querySelector(".item-icon").style = `background-image: url("${albumItems[i].images[0].url}");`;
+            albumElement.querySelector(".item-link").href = "/song_details/?id=" + albumItems[i].id;
+            albumElement.querySelector(".item-length").textContent =  msToMinutesAndSeconds(albumItems[i].duration_ms);
 
 
             itemListDom.appendChild(albumElement);
         }
-
-        swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            spaceBetween: 15,
-            freeMode: true
-        });
     });
 }
 
-function updateData() {
-    
+function msToMinutesAndSeconds(ms) {
+    let minutes = Math.floor(ms / 60000);
+    let seconds = ((ms % 60000) / 1000).toFixed(0);
+    return minutes + ":" + ((seconds < 10) ? '0' : '') + seconds;
 }
