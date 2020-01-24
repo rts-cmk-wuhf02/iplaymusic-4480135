@@ -64,6 +64,8 @@ function showData() {
     // Get the featured albums
     fetchData("browse/new-releases?country=SE&limit=7").then(function(albums) {
         const albumItems = albums.albums.items;
+        
+        swiperWrapperDom.innerHTML = "";
 
         for(let i = 0; i < albumItems.length; i++) {
             const albumElement = templateSlideDom.content.cloneNode(true);
@@ -75,16 +77,20 @@ function showData() {
             swiperWrapperDom.appendChild(albumElement);
         }
 
-        swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            spaceBetween: 15,
-            freeMode: true
-        });
+        if(swiper == undefined) {
+            swiper = new Swiper('.swiper-container', {
+                slidesPerView: 3,
+                spaceBetween: 15,
+                freeMode: true
+            });
+        }
     });
 
     // Get the new releases
     fetchData("browse/new-releases?country=SE").then(function(albums) {
         const albumItems = albums.albums.items;
+
+        itemListDom.innerHTML = "";
 
         for(let i = 0; i < albumItems.length; i++) {
             const albumElement = templateItemDom.content.cloneNode(true);
@@ -98,6 +104,7 @@ function showData() {
                     artistsThis += ", ";
                 }
             }
+
             albumElement.querySelector(".item-subtitle").textContent = artistsThis;
 
             albumElement.querySelector(".item-link").href = "/album_details/?id=" + albumItems[i].id;

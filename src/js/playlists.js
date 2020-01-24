@@ -65,9 +65,11 @@ function authenticateClient() {
 function showData() {
     // Get the featured playlists
     fetchData("browse/featured-playlists?country=SE&limit=10").then(function(playlists) {
-        console.log(playlists);
         dataPlaylists = playlists;
         const playlistItems = playlists.playlists.items;
+
+        swiperWrapperDom = "";
+        dataTracks = [];
         
         for(let i = 0; i < playlistItems.length; i++) {
             const playlistElement = templateSlideDom.content.cloneNode(true);
@@ -87,14 +89,17 @@ function showData() {
         }
 
         // Initialize swiper
-        swiper = new Swiper('.swiper-container', {
-            slidesPerView: 2,
-            spaceBetween: 0,
-            loop: true,
-            centeredSlides: true
-        });
+        if(swiper == undefined) {
+            swiper = new Swiper('.swiper-container', {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                loop: true,
+                centeredSlides: true
+            });
 
-        setInterval(updateData, 50); // Temporary solution due to Swiper issue
+            setInterval(updateData, 50); // Temporary solution due to Swiper issue
+        }
+
     });
 }
 

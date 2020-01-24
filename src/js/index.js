@@ -63,6 +63,8 @@ function showData() {
     fetchData("browse/new-releases?country=SE&limit=4").then(function(albums) {
         const albumItems = albums.albums.items;
 
+        featuredContainerDom.innerHTML = "";
+
         for(let i = 0; i < albumItems.length; i++) {
             const albumElement = templateFeaturedItemDom.content.cloneNode(true);
 

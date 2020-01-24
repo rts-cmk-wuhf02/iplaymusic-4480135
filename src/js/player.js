@@ -58,6 +58,21 @@ function showData() {
     // Get the tarck
     fetchData("tracks/" + params.get("id")).then(function(track) {
         console.log(track);
+
+        document.getElementById("playing-icon").style = `background-image: url(${track.album.images[0].url});`;
+        document.getElementById("song-title").textContent = track.name;
+
+        let artistName = "";
+        for(let i = 0; i < track.artists.length; i++) {
+            artistName += track.artists[i].name;
+
+            if(i < track.artists.length - 1) {
+                artistName += ", ";
+            }
+        }
+        document.getElementById("artist-name").textContent = artistName;
+
+        document.getElementById("song-length").textContent = msToMinutesAndSeconds(track.duration_ms);
     });
 }
 
