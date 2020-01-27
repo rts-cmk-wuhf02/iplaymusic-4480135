@@ -65,6 +65,7 @@ function showData() {
         console.log(track);
 
         document.getElementById("playing-icon").style = `background-image: url(${track.album.images[0].url});`;
+        document.querySelector("main").style = `background-image: url(${track.album.images[0].url});`;
         document.getElementById("song-title").textContent = track.name;
 
         let artistName = "";
