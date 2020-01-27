@@ -1,6 +1,7 @@
 let authToken;
 
 let swiper;
+let foundOne = false;
 
 // Data
 let dataPlaylists;
@@ -84,6 +85,12 @@ function showData() {
                 freeMode: true
             });
         }
+
+        if(foundOne) {
+            document.querySelector("#loader").remove();
+        } else {
+            foundOne = true;
+        }
     });
 
     // Get the new releases
@@ -113,6 +120,12 @@ function showData() {
 
 
             itemListDom.appendChild(albumElement);
+        }
+
+        if(foundOne) {
+            document.querySelector("#loader").remove();
+        } else {
+            foundOne = true;
         }
     });
 }

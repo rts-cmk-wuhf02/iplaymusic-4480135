@@ -1,0 +1,46 @@
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+    
+    #internal-loader {
+        display: flex;
+
+        .load-item {
+            background-color: #1030e0;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            margin: 0 4px;
+            animation: jump 0.5s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+  
+@keyframes jump {
+    0% {
+        transform: translateY(0%) scaleY(1) scaleX(1);
+    }
+    
+    5% {
+        transform: translateY(0%) scaleY(0.85) scaleX(1.15);
+    }
+    
+    10% {
+        transform: translateY(0%) scaleY(1) scaleX(1);
+    }
+    
+    100% {
+        transform: translateY(-100%);
+    }
+}

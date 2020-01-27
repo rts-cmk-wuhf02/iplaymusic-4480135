@@ -79,6 +79,9 @@ function showData() {
         document.getElementById("artist-name").textContent = artistName;
 
         document.getElementById("song-length").textContent = msToMinutesAndSeconds(track.duration_ms);
+
+
+        document.querySelector("#loader").remove();
     });
 }
 

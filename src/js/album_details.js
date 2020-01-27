@@ -101,6 +101,8 @@ function showData() {
 
             itemListDom.appendChild(albumElement);
         }
+
+        document.querySelector("#loader").remove();
     });
 }
 

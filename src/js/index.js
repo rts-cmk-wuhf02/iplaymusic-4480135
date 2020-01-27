@@ -93,5 +93,7 @@ function showData() {
 
             observer.observe(albumDom);
         }
+
+        document.querySelector("#loader").remove();
     });
 }

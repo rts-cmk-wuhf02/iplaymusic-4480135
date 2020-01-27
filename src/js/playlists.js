@@ -100,6 +100,7 @@ function showData() {
             setInterval(updateData, 50); // Temporary solution due to Swiper issue
         }
 
+        document.querySelector("#loader").remove();
     });
 }
 
