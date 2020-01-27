@@ -68,7 +68,7 @@ function showData() {
         dataPlaylists = playlists;
         const playlistItems = playlists.playlists.items;
 
-        swiperWrapperDom = "";
+        swiperWrapperDom.innerHTML = "";
         dataTracks = [];
         
         for(let i = 0; i < playlistItems.length; i++) {

@@ -56,6 +56,14 @@ function js(next) {
     next();
 }
 
+function audio(next) {
+    gulp.src("./src/audio/*.mp3")
+        .pipe(gulp.dest("./dist/assets/audio"))
+        .pipe(connect.reload());
+
+    next();
+}
+
 function json(next) {
     gulp.src("./src/json/*.json")
         .pipe(gulp.dest("./dist/data"))
@@ -81,6 +89,10 @@ function watchJs() {
     gulp.watch("./src/js/**/*.js", { ignoreInitial: false }, js);
 }
 
+function watchAudio() {
+    gulp.watch("./src/audio/**/*.mp3", { ignoreInitial: false }, audio);
+}
+
 function watchJson() {
     gulp.watch("./src/json/*.json", { ignoreInitial: false }, json);
 }
@@ -90,6 +102,7 @@ gulp.task("dev", function(next) {
     watchImages();
     watchScss();
     watchJs();
+    watchAudio();
     watchJson();
     connect.server({
         livereload: true,
@@ -104,6 +117,7 @@ gulp.task("build", function(next) {
     json(next);
     scss(next);
     images(next);
+    audio(next);
     html(next);
     
     next();

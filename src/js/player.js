@@ -1,7 +1,12 @@
 let authToken;
 
-let params = new URLSearchParams(window.location.search);
+const audioObject = new Audio("/assets/audio/jingle_bells.mp3");
+let isPlayingAudio = false;
+const params = new URLSearchParams(window.location.search);
 
+
+// DOM
+const progressCoverDom = document.querySelector("#progress-cover");
 
 // Data
 let dataPlaylists;
@@ -81,3 +86,24 @@ function msToMinutesAndSeconds(ms) {
     let seconds = ((ms % 60000) / 1000).toFixed(0);
     return minutes + ":" + ((seconds < 10) ? '0' : '') + seconds;
 }
+
+function secondsToMinutes(seconds) {
+    let minutes = Math.floor(seconds / 60);
+    let secondsTotal = Math.floor((seconds % 60)).toFixed(0);
+    return minutes + ":" + ((secondsTotal < 10) ? '0' : '') + secondsTotal;
+}
+
+document.querySelector("#play-song-button").addEventListener("click", function() {
+    if(!isPlayingAudio) {
+        audioObject.play();
+        isPlayingAudio = true;
+        document.getElementById("song-length").textContent = secondsToMinutes(audioObject.duration);
+    } else {
+        audioObject.pause();
+        isPlayingAudio = false;
+    }
+});
+
+audioObject.addEventListener("timeupdate", function() {
+    progressCoverDom.style.left = ((100 / audioObject.duration) * audioObject.currentTime) + "%";
+});
