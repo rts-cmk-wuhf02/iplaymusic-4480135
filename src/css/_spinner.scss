@@ -9,7 +9,7 @@
     width: 100vw;
     justify-content: center;
     align-items: center;
-    background-color: #202020;
+    background-color: $background-colour;
     
     #internal-loader {
         display: flex;
@@ -23,6 +23,24 @@
             animation: jump 0.5s;
             animation-direction: alternate;
             animation-iteration-count: infinite;
+
+            &:nth-child(1) {
+                background: linear-gradient(to bottom right, $gradient-colour-left, $gradient-colour-right);
+                background: -webkit-linear-gradient(top left, $gradient-colour-left, $gradient-colour-right);
+                background: -moz-linear-gradient(top left, $gradient-colour-left, $gradient-colour-right);
+            }
+
+            &:nth-child(2) {
+                background: linear-gradient(to bottom right, $gradient-colour-left, $gradient-colour-right);
+                background: -webkit-linear-gradient(top left, $gradient-colour-left, $gradient-colour-right);
+                background: -moz-linear-gradient(top left, $gradient-colour-left, $gradient-colour-right);
+            }
+
+            &:nth-child(3) {
+                background: linear-gradient(to bottom right, $gradient-colour-left, $gradient-colour-right);
+                background: -webkit-linear-gradient(top left, $gradient-colour-left, $gradient-colour-right);
+                background: -moz-linear-gradient(top left, $gradient-colour-left, $gradient-colour-right);
+            }
         }
     }
 }

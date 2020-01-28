@@ -12,7 +12,8 @@
         <h1 class="gradient-text">Categories</h1>
 
         <ul class="category-list">
-            <li><button class="category-item bg_alternative-colour">
+            <!-- Items here -->
+            <!--<li><button class="category-item bg_alternative-colour">
                 <p>Alternative</p>
                 <img src="/assets/img/icon_more.png">
             </button></li>
@@ -66,12 +67,26 @@
             <li><button class="category-item bg_industrial-colour">
                 <p>Industrial</p>
                 <img src="/assets/img/icon_more.png">
-            </button></li>
+            </button></li>-->
         </ul>
     </main>
 
     <div id="lower-menu_wave">
         <%- include('../partials/lower-menu') %>
     </div>
+
+    <template id="template-category-item">
+        <li>
+            <button class="category-item">
+                <p class="category-item-name"></p>
+                <img src="/assets/img/icon_more.png">
+            </button>
+            <ul class="subcategory-list" style="display: none;">
+                
+            </ul>
+        </li>
+    </template>
+
+    <script src="/assets/js/categories.js"></script>
 
 <%- include('../partials/body_end') %>
