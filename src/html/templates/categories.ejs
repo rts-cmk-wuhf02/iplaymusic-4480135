@@ -4,6 +4,8 @@
     <title>iPlayMusic | Categories</title>
 <%- include('../partials/head_end') %>
 
+    <%- include('../partials/spinner.ejs') %>
+
     <%- include('../partials/header_start') %>
         Categories
     <%- include('../partials/header_end') %>
@@ -84,6 +86,16 @@
             <ul class="subcategory-list" style="display: none;">
                 
             </ul>
+        </li>
+    </template>
+
+    <template id="template-subcategory-item">
+        <li>
+            <a class="subcategory-item">
+                <p class="subcategory-item-name"></p>
+                <img class="dark-icon" src="/assets/img/icon_arrow_forward.png">
+                <img class="light-icon" src="/assets/img/icon_arrow_forward_light.png">
+            </a>
         </li>
     </template>
 

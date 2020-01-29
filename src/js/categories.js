@@ -13,6 +13,7 @@ const coloursList = [
 
 const categoryListDom = document.getElementsByClassName("category-list")[0];
 const templateCategoryItemDom = document.getElementById("template-category-item");
+const templateSubcategoryItemDom = document.getElementById("template-subcategory-item");
 
 categoryListDom.addEventListener("click", function(e) {
     if(e.target.nextElementSibling !== null && e.target.classList.contains("category-item")) {
@@ -36,7 +37,7 @@ async function fetchData(resource) {
             Authorization: "Bearer " + authToken
         },
         method: "GET"
-    }).then(data => data.json());
+    }).then(data => data.json()).catch(err => console.log(err));
 }
 
 // Authentication
@@ -79,22 +80,28 @@ function showData() {
     fetchData("browse/categories").then(function(categories) {
         for(let i = 0; i < categories.categories.items.length; i++) {
             const categoryItemElement = templateCategoryItemDom.content.cloneNode(true);
+            categoryItemElement.querySelector("li").setAttribute("data-id", i);
             categoryItemElement.querySelector(".category-item").style = "background-color: " + coloursList[Math.floor(Math.random() * coloursList.length)];
             categoryItemElement.querySelector(".category-item-name").innerText = categories.categories.items[i].name;
 
             categoryListDom.appendChild(categoryItemElement);
+            const categoryId = i;
 
-            try {
-                fetchData("browse/categories/" + categories.categories.items[i].id + "/playlists").then(function(playlists) {
-                    console.log(playlists);
+            fetchData("browse/categories/" + categories.categories.items[i].id + "/playlists").then(function(playlists) {
+                console.log(playlists);
+                if(playlists.error === undefined) {
+                    const categoryItemDom = document.querySelector(".category-list > [data-id=\"" + categoryId + "\"] .subcategory-list");
 
                     for(let i = 0; i < playlists.playlists.items.length; i++) {
-                        
+                        const subcategoryItemElement = templateSubcategoryItemDom.content.cloneNode(true);
+                        subcategoryItemElement.querySelector(".subcategory-item-name").innerText = playlists.playlists.items[i].name;
+
+                        categoryItemDom.appendChild(subcategoryItemElement);
                     }
-                });
-            } catch(ex) {
-                console.error(ex);
-            }
+                }
+            });
         }
+
+        document.querySelector("#loader").remove();
     });
 }
